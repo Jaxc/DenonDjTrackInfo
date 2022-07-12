@@ -83,7 +83,7 @@ class trackID:
 
         if self.deck_playing is not None:
             print(f"{self.deck_status[self.deck_playing].track_artist} - {self.deck_status[self.deck_playing].track_name}")
-            self.f.seek(0)g
+            self.f.seek(0)
             self.f.truncate()
             self.f.write(f"{self.deck_status[self.deck_playing].track_artist} - {self.deck_status[self.deck_playing].track_name}")
             self.f.flush()
