@@ -51,7 +51,7 @@ class trackID:
         self.deck_playing = None
         self.N_DECKS = n_decks
         self.deck_status = [TrackInfo(0.0,"","",False) for i in range(self.N_DECKS)]
-        self.f = open("trackID.txt", "w")
+        self.f = open("trackID.txt", "wb")
 
 
     def deck_stopped(self, deck_channel: int):
@@ -85,7 +85,7 @@ class trackID:
             print(f"{self.deck_status[self.deck_playing].track_artist} - {self.deck_status[self.deck_playing].track_name}")
             self.f.seek(0)
             self.f.truncate()
-            self.f.write(f"{self.deck_status[self.deck_playing].track_artist} - {self.deck_status[self.deck_playing].track_name}")
+            self.f.write(f"{self.deck_status[self.deck_playing].track_artist} - {self.deck_status[self.deck_playing].track_name}".encode(encoding='UTF-8'))
             self.f.flush()
 
     def update_track_artist(self, track_artist_data: TrackArtistDataType):
@@ -163,5 +163,5 @@ if __name__ == '__main__':
     track_id = trackID(2)
 
     PrimeGo = PyStageLinQ.PyStageLinQ(new_device_found_callback, name="Jaxcie StagelinQ")
-    PrimeGo.start()
+    PrimeGo.start_standalone()
 

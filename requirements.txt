@@ -1,1 +1,1 @@
-PyStageLinQ
+PyStageLinQ==0.2.1
