@@ -3,8 +3,13 @@
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
+import logging
 from dataclasses import dataclass
 from PyStageLinQ import EngineServices, PyStageLinQ
+
+logging.basicConfig(
+    level=logging.DEBUG, format="[%(filename)s:%(lineno)d %(levelname)s - %(message)s"
+)
 
 PrimeGo = None
 track_id = None
